@@ -1,0 +1,10 @@
+.states {
+  display: flex;
+}
+
+.states span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+  word-break: normal;
+}
