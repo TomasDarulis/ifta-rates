@@ -1,5 +1,6 @@
 require 'interactor'
 require 'open-uri'
+require 'csv'
 
 class SaveFile
   include Interactor
