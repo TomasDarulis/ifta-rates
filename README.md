@@ -1,6 +1,18 @@
-Ruby version: 2.7.7
+Ruby version:
 
-Rails version: 6.1.7
+```
+2.7.7
+```
+
+Rails version:
+```
+6.1.7
+```
+
+Node version:
+```
+v19.4.0
+```
 
 Setup:
 ```
