@@ -1,4 +1,4 @@
-require_relative 'read_csv'
+require_relative 'save_file'
 require_relative 'refine_data'
 
 class IftaRateDataOrganizer
@@ -7,7 +7,7 @@ class IftaRateDataOrganizer
   delegate :year, :quarter, to: :context
   before :set_ifta_rate
 
-  organize ReadCsv, RefineData
+  organize SaveFile, RefineData
 
   private
 

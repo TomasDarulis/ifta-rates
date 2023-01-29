@@ -1,13 +1,11 @@
 class IftaRate < ApplicationRecord
-  validates :year, presence: true
-  validates :quarter, presence: true
-  validates_uniqueness_of :year, scope: :quarter
+  has_one_attached :file
 
   def fail!(message:)
     update(status: :error, error: message)
   end
 
   def complete!(rates:)
-    update(status: :completed, rates: rates)
+    update(status: :completed, rates: rates, error: "")
   end
 end

@@ -1,19 +1,25 @@
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import style from './IftaRates.module.css';
 import DataTable from 'react-data-table-component';
 
 const Table = (props) => {
-    const data = props.iftaRates;
+    const iftaRates = props.iftaRates
 
-    const RatesStates = row => (
-        <div className={style.states}>
-            {Object.entries(row.rates).map(([state, rate]) => (
-                <span key={state}>{state + ': $' + rate + ' '}</span>
-            ))}
-        </div>
-    );
+    const data = iftaRates.map((iftaRate)=>{
+        return {
+            year: iftaRate.year,
+            quarter: iftaRate.quarter,
+            status: iftaRate.status,
+            ...iftaRate.rates,
+        }
+    })
+
+    const states = []
+    iftaRates.forEach((iftaRate)=>{
+        states.push(...Object.keys(iftaRate.rates))
+    })
+
+    const uniqueStates = [...new Set(states)]
 
     const columns = [
         {
@@ -34,11 +40,11 @@ const Table = (props) => {
             maxWidth: "20px",
             sortable: true,
         },
-        {
-            name: 'Rates by State',
-            cell: row => <RatesStates {...row}/>
-        },
     ];
+
+    columns.push(...uniqueStates.map(state => {
+        return { name: state, selector: state, sortable: true, maxWidth: "20px"};
+    }))
 
      return(
        <div>
