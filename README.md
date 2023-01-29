@@ -2,6 +2,12 @@ Ruby version: 2.7.7
 
 Rails version: 6.1.7
 
+Setup:
+
+bundle install
+
+rails db:setup
+
 To run the app:
 
 rails s
