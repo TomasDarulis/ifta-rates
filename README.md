@@ -6,6 +6,8 @@ Setup:
 ```
 bundle install
 
+rails webpacker:install
+
 rails db:setup
 ```
 To run the app:
