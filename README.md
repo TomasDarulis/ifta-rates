@@ -5,6 +5,7 @@ Rails version: 6.1.7
 To run the app:
 
 rails s
+
 ./bin/webpacker-dev-server
 
 To run a rake task that fetches ifta rates by year and quarter run this:
