@@ -28,7 +28,7 @@ rails s
 
 ./bin/webpacker-dev-server
 ```
-To run a rake task that fetches ifta rates by year and quarter run this:
+To run a rake task that fetches ifta rates by year and quarter:
 ```
 rake fetch_ifta_rates\[2017,2\]
 ```
