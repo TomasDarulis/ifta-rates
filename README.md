@@ -18,7 +18,7 @@ Setup:
 ```
 bundle install
 
-rails webpacker:install
+yarn install
 
 rails db:setup
 ```
